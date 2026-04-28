@@ -1583,3 +1583,146 @@ section { position: relative; }
   .timeline-step { grid-template-columns: 1fr; gap: 12px; }
   .timeline-num { font-size: 28px; }
 }
+
+/* =================================================================
+   3CX LIVE CHAT MODAL — in-page popup (replaces new-tab handoff)
+   ================================================================= */
+.livechat-modal {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 80;
+  width: 380px;
+  height: 600px;
+  max-height: calc(100vh - 48px);
+  max-width: calc(100vw - 32px);
+  background: var(--bg-elevated);
+  border: 0.5px solid rgba(157, 95, 255, 0.5);
+  border-radius: var(--radius-lg);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translateY(20px) scale(0.96);
+  transition: opacity 280ms ease, transform 280ms ease;
+}
+.livechat-modal.livechat-open {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.livechat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 14px;
+  background: linear-gradient(135deg, rgba(157, 95, 255, 0.25), rgba(0, 245, 212, 0.12));
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+}
+.livechat-back {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-pill);
+  padding: 5px 12px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 200ms ease;
+  white-space: nowrap;
+}
+.livechat-back:hover { background: rgba(255, 255, 255, 0.16); }
+.livechat-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-teal);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  flex: 1;
+  text-align: center;
+}
+.livechat-close {
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  font-size: 22px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 200ms ease, color 200ms ease;
+  line-height: 1;
+}
+.livechat-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+.livechat-loading {
+  position: absolute;
+  inset: 49px 0 0;
+  background: var(--bg-elevated);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  z-index: 2;
+}
+.livechat-loading-text {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+.livechat-spinner {
+  display: flex;
+  gap: 6px;
+}
+.livechat-spinner span {
+  width: 8px;
+  height: 8px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  animation: livechatSpin 1.2s infinite;
+}
+.livechat-spinner span:nth-child(2) { animation-delay: 0.2s; }
+.livechat-spinner span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes livechatSpin {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-6px); }
+}
+.livechat-iframe {
+  flex: 1;
+  width: 100%;
+  border: 0;
+  background: #FFFFFF;
+  transition: opacity 350ms ease;
+}
+
+/* Mobile responsive — fill most of viewport */
+@media (max-width: 600px) {
+  .livechat-modal {
+    width: calc(100vw - 16px);
+    height: calc(100vh - 16px);
+    bottom: 8px;
+    right: 8px;
+    max-width: none;
+    max-height: none;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .livechat-modal {
+    transition: opacity 0.01ms;
+    transform: none;
+  }
+  .livechat-spinner span { animation: none; opacity: 0.7; }
+}
