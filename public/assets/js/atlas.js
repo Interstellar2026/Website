@@ -161,6 +161,20 @@
   }
 
   // ============ 3CX MODAL (in-page popup) ============
+  function openLiveChatPopup(url) {
+    closePanel();
+    const w = 400;
+    const h = 640;
+    const left = window.screenX + window.outerWidth - w - 20;
+    const top = window.screenY + 80;
+    const features = 'width=' + w + ',height=' + h + ',left=' + left + ',top=' + top + ',resizable=yes,scrollbars=yes,status=no,location=no,toolbar=no,menubar=no';
+    const popup = window.open(url, 'InterstellarLiveChat', features);
+    if (!popup || popup.closed || typeof popup.closed === 'undefined') {
+      addMessage("Looks like your browser blocked the popup. Please allow popups for this site, or call (720) 735-8800.", 'bot');
+      openPanel();
+    }
+  }
+
   let liveChatModal = null;
 
   function ensureLiveChatModal() {
@@ -356,7 +370,7 @@
     const ctx = encodeURIComponent("Atlas qualified: industry=" + (state.qualification.industry || 'n/a') + ", size=" + (state.qualification.size || 'n/a') + ", pain=" + (state.qualification.pain || 'n/a') + ", urgency=" + (state.qualification.urgency || 'n/a'));
     botSay("Connecting you with the Interstellar I.S. team now…", function() {
       setTimeout(function() {
-        openLiveChatModal(CONFIG.teamChatUrl + '?ctx=' + ctx);
+        openLiveChatPopup(CONFIG.teamChatUrl + '?ctx=' + ctx);
       }, 600);
     });
   }
@@ -366,7 +380,7 @@
     clearOptions();
     botSay("Sounds like your situation needs the principal. Routing you to Marc Shamp directly…", function() {
       setTimeout(function() {
-        openLiveChatModal(CONFIG.founderChatUrl);
+        openLiveChatPopup(CONFIG.founderChatUrl);
       }, 600);
     });
   }
