@@ -161,17 +161,10 @@
   }
 
   // ============ 3CX MODAL (in-page popup) ============
-  function openLiveChatPopup(url) {
-    closePanel();
-    const w = 400;
-    const h = 640;
-    const left = window.screenX + window.outerWidth - w - 20;
-    const top = window.screenY + 80;
-    const features = 'width=' + w + ',height=' + h + ',left=' + left + ',top=' + top + ',resizable=yes,scrollbars=yes,status=no,location=no,toolbar=no,menubar=no';
-    const popup = window.open(url, 'InterstellarLiveChat', features);
-    if (!popup || popup.closed || typeof popup.closed === 'undefined') {
-      addMessage("Looks like your browser blocked the popup. Please allow popups for this site, or call (720) 735-8800.", 'bot');
-      openPanel();
+  function openLiveChatTab(url) {
+    const win = window.open(url, '_blank', 'noopener,noreferrer');
+    if (!win) {
+      addMessage("Your browser blocked the new tab. Please allow popups for this site, or call (720) 735-8800.", 'bot');
     }
   }
 
@@ -368,9 +361,9 @@
     addMessage('Talk to a human', 'user');
     clearOptions();
     const ctx = encodeURIComponent("Atlas qualified: industry=" + (state.qualification.industry || 'n/a') + ", size=" + (state.qualification.size || 'n/a') + ", pain=" + (state.qualification.pain || 'n/a') + ", urgency=" + (state.qualification.urgency || 'n/a'));
-    botSay("Connecting you with the Interstellar I.S. team now…", function() {
+    botSay("Opening live chat in a new tab — your spot here is saved. We will be right with you.", function() {
       setTimeout(function() {
-        openLiveChatPopup(CONFIG.teamChatUrl + '?ctx=' + ctx);
+        openLiveChatTab(CONFIG.teamChatUrl + '?ctx=' + ctx);
       }, 600);
     });
   }
@@ -378,9 +371,9 @@
   function routeToFounder() {
     addMessage('Talk to the founder', 'user');
     clearOptions();
-    botSay("Sounds like your situation needs the principal. Routing you to Marc Shamp directly…", function() {
+    botSay("Sounds like your situation needs the principal. Opening Marc Shamp directly in a new tab.", function() {
       setTimeout(function() {
-        openLiveChatPopup(CONFIG.founderChatUrl);
+        openLiveChatTab(CONFIG.founderChatUrl);
       }, 600);
     });
   }
