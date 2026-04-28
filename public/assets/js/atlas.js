@@ -183,7 +183,7 @@
           '<div class="livechat-loading-text">Connecting you to the team…</div>' +
           '<div class="livechat-spinner"><span></span><span></span><span></span></div>' +
         '</div>' +
-        '<iframe id="livechat-iframe" class="livechat-iframe" title="Live chat with Interstellar I.S. team" allow="microphone; camera; autoplay" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+        '<iframe id="livechat-iframe" class="livechat-iframe" title="Live chat with Interstellar I.S. team" allow="microphone; camera; autoplay" referrerpolicy="no-referrer-when-downgrade" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-modals"></iframe>';
       document.body.appendChild(modal);
 
       modal.querySelector('#livechat-back').addEventListener('click', function() {
