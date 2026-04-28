@@ -1,0 +1,15 @@
+# Force HTTPS
+http://isinterstellar.com/* https://isinterstellar.com/:splat 301!
+http://www.isinterstellar.com/* https://isinterstellar.com/:splat 301!
+
+# Redirect www to apex
+https://www.isinterstellar.com/* https://isinterstellar.com/:splat 301!
+
+# Trailing slash normalization
+/solutions /solutions/ 301
+/process /process/ 301
+/about /about/ 301
+/contact /contact/ 301
+/legal/privacy /legal/privacy/ 301
+/legal/terms /legal/terms/ 301
+/legal/agent-disclosure /legal/agent-disclosure/ 301

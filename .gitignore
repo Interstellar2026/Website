@@ -1,0 +1,35 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Netlify
+.netlify/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Env files (none currently used, but reserved)
+.env
+.env.local
+.env.*.local
+
+# Build artifacts (none currently — site is static)
+node_modules/
+dist/
+build/
+
+# Backups
+*.bak
+*.orig
+
+# macOS resource forks
+._*

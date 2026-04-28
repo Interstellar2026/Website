@@ -1,0 +1,17 @@
+{
+  "name": "Interstellar I.S. — Infrastructure Solutions",
+  "short_name": "Interstellar I.S.",
+  "description": "Independent infrastructure intelligence. Veteran-owned advisory across 503+ leading suppliers.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F0A24",
+  "theme_color": "#0F0A24",
+  "icons": [
+    {
+      "src": "/assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
