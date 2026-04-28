@@ -34,55 +34,10 @@
     'what is interstellar': "Interstellar I.S. is an independent infrastructure broker. We help businesses source voice, network, security, cloud, mobility, and AI services from 503+ leading suppliers — without the bias of working for any one of them.",
     'who founded': "Marc Shamp — a U.S. veteran who built a payments business helping merchants stop overpaying, then turned the same lens on telecom and IT. He still answers the phone.",
     'veteran owned': "Yes. Interstellar I.S. is a veteran-owned LLC, founded and led by Marc Shamp.",
-    'where located': "We are based in Aurora, Colorado — but we serve businesses nationally and globally.",
+    'where located': "We're based in Aurora, Colorado — but we serve businesses nationally and globally.",
     'how long business': "Interstellar I.S. LLC was formed in 2022. The brokerage practice is built on multi-year operator relationships across payments, telecom, and IT.",
-    'reseller or broker': "Broker. We do not carry inventory or resell. We source the right supplier for your need from a portfolio of 503+, then advocate for you for the life of the contract.",
-    'do you charge fees': "No. We are paid by the suppliers when you procure through us. Our advisory costs you $0.",
-    'what is i.s.': "Infrastructure Solutions. We architect connectivity, communications, security, and cloud — across every layer your business runs on.",
-    'what services': "Seven categories: Voice & Collaboration, Contact Center, Network & Connectivity, Cybersecurity, Cloud & Data Center, Mobility & IoT, and AI & Customer Experience.",
-    'how many suppliers': "503 and growing. Our supplier list expands as new technologies emerge — most recently AI and CX automation.",
-    'work with my carrier': "Almost certainly. With 503 supplier
-$atlasContent = @'
-/* =================================================================
-   ATLAS CHATBOT — INTERSTELLAR I.S.
-   v2: in-page modal handoff to 3CX (no new tab) + back-to-Atlas
-   ================================================================= */
-
-(function() {
-  'use strict';
-
-  const CONFIG = {
-    bookingsUrl: 'https://outlook.office.com/book/BookTimeWithMe@isinterstellar.com/?ismsaljsauthenabled',
-    teamChatUrl: 'https://1476.3cx.cloud/interstellaris',
-    founderChatUrl: 'https://1476.3cx.cloud/marcshamp',
-    phone: '+17207358800',
-    phoneDisplay: '(720) 735-8800',
-    email: 'admin@isinterstellar.com'
-  };
-
-  const state = {
-    step: 'opening',
-    qualification: { industry: null, size: null, pain: null, urgency: null }
-  };
-
-  const launcher = document.getElementById('atlas-launcher');
-  const panel = document.getElementById('atlas-panel');
-  const closeBtn = document.getElementById('atlas-close');
-  const messages = document.getElementById('atlas-messages');
-  const optionsEl = document.getElementById('atlas-options');
-  const input = document.getElementById('atlas-input');
-  const sendBtn = document.getElementById('atlas-send');
-
-  if (!launcher || !panel) return;
-
-  const FAQ = {
-    'what is interstellar': "Interstellar I.S. is an independent infrastructure broker. We help businesses source voice, network, security, cloud, mobility, and AI services from 503+ leading suppliers — without the bias of working for any one of them.",
-    'who founded': "Marc Shamp — a U.S. veteran who built a payments business helping merchants stop overpaying, then turned the same lens on telecom and IT. He still answers the phone.",
-    'veteran owned': "Yes. Interstellar I.S. is a veteran-owned LLC, founded and led by Marc Shamp.",
-    'where located': "We are based in Aurora, Colorado — but we serve businesses nationally and globally.",
-    'how long business': "Interstellar I.S. LLC was formed in 2022. The brokerage practice is built on multi-year operator relationships across payments, telecom, and IT.",
-    'reseller or broker': "Broker. We do not carry inventory or resell. We source the right supplier for your need from a portfolio of 503+, then advocate for you for the life of the contract.",
-    'do you charge fees': "No. We are paid by the suppliers when you procure through us. Our advisory costs you $0.",
+    'reseller or broker': "Broker. We don't carry inventory or resell. We source the right supplier for your need from a portfolio of 503+, then advocate for you for the life of the contract.",
+    'do you charge fees': "No. We're paid by the suppliers when you procure through us. Our advisory costs you $0.",
     'what is i.s.': "Infrastructure Solutions. We architect connectivity, communications, security, and cloud — across every layer your business runs on.",
     'what services': "Seven categories: Voice & Collaboration, Contact Center, Network & Connectivity, Cybersecurity, Cloud & Data Center, Mobility & IoT, and AI & Customer Experience.",
     'how many suppliers': "503 and growing. Our supplier list expands as new technologies emerge — most recently AI and CX automation.",
@@ -91,21 +46,21 @@ $atlasContent = @'
     'cybersecurity too': "Absolutely. SASE, MDR, SSE, zero-trust, firewalls, identity — 78 cybersecurity suppliers in our portfolio.",
     'difference from carrier': "A carrier rep sells you their carrier. We compare 503 suppliers and recommend the best fit. Different incentive, different outcome.",
     'difference from broker': "Most brokers sell volume. We sell fit. Most brokers disappear after the contract signs. We stay through the lifecycle — renewals, escalations, expansion.",
-    'save money': "Mid-market clients typically see 18–32% annual savings. Some see more, some see less. The free assessment tells you exactly what is possible for your situation.",
+    'save money': "Mid-market clients typically see 18–32% annual savings. Some see more, some see less. The free assessment tells you exactly what's possible for your situation.",
     'how assessment works': "30-minute call. We learn your current spend, contracts, pain points. Within 72 hours you get a side-by-side comparison of options. No commitment to switch.",
     'how long process': "Discovery: 30 min. Sourcing & quoting: ~72 hrs. Implementation depends on the project — anywhere from days (small VoIP) to months (multi-site SD-WAN).",
     'switch providers': "Not necessarily. Sometimes we renegotiate with your existing supplier. Sometimes we transition to a better fit. The assessment tells you which path is right.",
     'under contract': "We work around it. Often we time the transition to your renewal. Sometimes we find immediate value even mid-contract through restructuring.",
     'handle implementation': "Yes. We project-manage the rollout so you stay focused on operations. Order coordination, install scheduling, escalation management — all of it.",
-    'something breaks': "We are your single point of escalation for the life of the contract. Outages, billing issues, change requests — call us, we handle it.",
-    'sample quote': "Yes — share your current bill in the discovery call and we will show you exactly what a side-by-side comparison looks like.",
-    'obligated': "Nothing. The assessment is free, no obligation. If we cannot save you money or improve your service, we say so honestly.",
-    'cost me': "$0. We are compensated by suppliers, not clients.",
-    'not ready switch': "That is fine. The assessment still has value — you will know what your current arrangement is worth in the open market. Useful leverage at renewal time.",
+    'something breaks': "We're your single point of escalation for the life of the contract. Outages, billing issues, change requests — call us, we handle it.",
+    'sample quote': "Yes — share your current bill in the discovery call and we'll show you exactly what a side-by-side comparison looks like.",
+    'obligated': "Nothing. The assessment is free, no obligation. If we can't save you money or improve your service, we say so honestly.",
+    'cost me': "$0. We're compensated by suppliers, not clients.",
+    'not ready switch': "That's fine. The assessment still has value — you'll know what your current arrangement is worth in the open market. Useful leverage at renewal time.",
     'too small': "We work with companies as small as a single office. SMB is one of our strongest practice areas — we treat it like enterprise, just at the right scale.",
     'government contracts': "We can support government-adjacent work, federal contractors, and SLED. For direct federal contracting we partner with appropriate set-aside firms.",
     'international': "Yes. Multi-country procurement with Tier-1 carrier orchestration is something we routinely handle for global enterprise clients.",
-    'compliance': "We work with suppliers across HIPAA, PCI-DSS, SOC 2, GLBA, and FedRAMP-relevant categories. We are a broker, not the compliance auditor — but we route you to suppliers that meet your specific requirements."
+    'compliance': "We work with suppliers across HIPAA, PCI-DSS, SOC 2, GLBA, and FedRAMP-relevant categories. We're a broker, not the compliance auditor — but we route you to suppliers that meet your specific requirements."
   };
 
   const FAQ_KEYWORDS = {
@@ -142,14 +97,15 @@ $atlasContent = @'
   };
 
   function scrollToBottom() { messages.scrollTop = messages.scrollHeight; }
-  function addMessage(text, sender) {
-    sender = sender || 'bot';
+
+  function addMessage(text, sender = 'bot') {
     const msg = document.createElement('div');
-    msg.className = 'atlas-msg atlas-msg-' + sender;
+    msg.className = `atlas-msg atlas-msg-${sender}`;
     msg.textContent = text;
     messages.appendChild(msg);
     scrollToBottom();
   }
+
   function showTyping() {
     const t = document.createElement('div');
     t.className = 'atlas-typing';
@@ -158,29 +114,34 @@ $atlasContent = @'
     messages.appendChild(t);
     scrollToBottom();
   }
+
   function hideTyping() {
     const t = document.getElementById('atlas-typing-indicator');
     if (t) t.remove();
   }
+
   function setOptions(opts) {
     optionsEl.innerHTML = '';
-    opts.forEach(function(opt) {
+    opts.forEach(opt => {
       const btn = document.createElement('button');
       btn.className = 'atlas-option';
       btn.textContent = opt.label;
-      btn.addEventListener('click', function() { opt.action(opt.label); });
+      btn.addEventListener('click', () => opt.action(opt.label));
       optionsEl.appendChild(btn);
     });
   }
+
   function clearOptions() { optionsEl.innerHTML = ''; }
-  function botSay(text, callback, delay) {
+
+  function botSay(text, callback, delay = 600) {
     showTyping();
-    setTimeout(function() {
+    setTimeout(() => {
       hideTyping();
       addMessage(text, 'bot');
       if (callback) callback();
-    }, delay || 600);
+    }, delay);
   }
+
   function matchFAQ(text) {
     const t = text.toLowerCase();
     let bestKey = null;
@@ -189,14 +150,19 @@ $atlasContent = @'
       for (const kw of keywords) {
         if (t.includes(kw)) {
           const score = kw.length;
-          if (score > bestScore) { bestScore = score; bestKey = key; }
+          if (score > bestScore) {
+            bestScore = score;
+            bestKey = key;
+          }
         }
       }
     }
     return bestKey ? FAQ[bestKey] : null;
   }
 
+  // ============ 3CX MODAL (in-page popup) ============
   let liveChatModal = null;
+
   function ensureLiveChatModal() {
     if (liveChatModal) return liveChatModal;
     let modal = document.getElementById('livechat-modal');
@@ -219,36 +185,50 @@ $atlasContent = @'
         '</div>' +
         '<iframe id="livechat-iframe" class="livechat-iframe" title="Live chat with Interstellar I.S. team" allow="microphone; camera; autoplay" referrerpolicy="no-referrer-when-downgrade"></iframe>';
       document.body.appendChild(modal);
-      modal.querySelector('#livechat-back').addEventListener('click', function() { closeLiveChatModal(); openPanel(); });
-      modal.querySelector('#livechat-close').addEventListener('click', function() { closeLiveChatModal(); });
+
+      modal.querySelector('#livechat-back').addEventListener('click', function() {
+        closeLiveChatModal();
+        openPanel();
+      });
+      modal.querySelector('#livechat-close').addEventListener('click', function() {
+        closeLiveChatModal();
+      });
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.classList.contains('livechat-open')) closeLiveChatModal();
+        if (e.key === 'Escape' && modal.classList.contains('livechat-open')) {
+          closeLiveChatModal();
+        }
       });
     }
     liveChatModal = modal;
     return modal;
   }
+
   function openLiveChatModal(url) {
     const modal = ensureLiveChatModal();
     const iframe = modal.querySelector('#livechat-iframe');
     const loading = modal.querySelector('#livechat-loading');
+
     closePanel();
     modal.classList.add('livechat-open');
     modal.setAttribute('aria-hidden', 'false');
     iframe.style.opacity = '0';
     loading.style.display = 'flex';
     iframe.src = url;
+
     setTimeout(function() {
       iframe.style.opacity = '1';
       loading.style.display = 'none';
     }, 1500);
   }
+
   function closeLiveChatModal() {
     if (!liveChatModal) return;
     const iframe = liveChatModal.querySelector('#livechat-iframe');
     liveChatModal.classList.remove('livechat-open');
     liveChatModal.setAttribute('aria-hidden', 'true');
-    setTimeout(function() { if (iframe) iframe.src = 'about:blank'; }, 400);
+    setTimeout(function() {
+      if (iframe) iframe.src = 'about:blank';
+    }, 400);
   }
 
   function start() {
@@ -264,6 +244,7 @@ $atlasContent = @'
       ]);
     }, 400);
   }
+
   function handleQuickStart(category) {
     const labels = { bill_too_high: 'Cut my bill', voice: 'Voice / contact center', network: 'Network & SD-WAN', security: 'Cybersecurity' };
     addMessage(labels[category], 'user');
@@ -271,10 +252,12 @@ $atlasContent = @'
     clearOptions();
     askIndustry();
   }
+
   function askIndustry() {
     state.step = 'asking_industry';
     botSay("Got it. What does your business do? (One word is fine — healthcare, manufacturing, legal, retail, anything.)");
   }
+
   function askSize() {
     state.step = 'asking_size';
     botSay("Roughly how many people work there?", function() {
@@ -287,12 +270,14 @@ $atlasContent = @'
       ]);
     });
   }
+
   function handleSize(size, label) {
     addMessage(label, 'user');
     state.qualification.size = size;
     clearOptions();
     if (state.qualification.pain) askUrgency(); else askPain();
   }
+
   function askPain() {
     state.step = 'asking_pain';
     botSay("What's the main thing? (Pick the closest.)", function() {
@@ -305,12 +290,14 @@ $atlasContent = @'
       ]);
     });
   }
+
   function handlePain(pain, label) {
     addMessage(label, 'user');
     state.qualification.pain = pain;
     clearOptions();
     askUrgency();
   }
+
   function askUrgency() {
     state.step = 'asking_urgency';
     botSay("When do you need this fixed?", function() {
@@ -322,12 +309,14 @@ $atlasContent = @'
       ]);
     });
   }
+
   function handleUrgency(urgency, label) {
     addMessage(label, 'user');
     state.qualification.urgency = urgency;
     clearOptions();
     deliverRecommendation();
   }
+
   function deliverRecommendation() {
     state.step = 'recommending';
     const q = state.qualification;
@@ -343,6 +332,7 @@ $atlasContent = @'
       setOptions(opts);
     }, 800);
   }
+
   function openBookings() {
     addMessage('Schedule it', 'user');
     clearOptions();
@@ -359,27 +349,35 @@ $atlasContent = @'
       }, 1500);
     });
   }
+
   function routeToTeam() {
     addMessage('Talk to a human', 'user');
     clearOptions();
     const ctx = encodeURIComponent("Atlas qualified: industry=" + (state.qualification.industry || 'n/a') + ", size=" + (state.qualification.size || 'n/a') + ", pain=" + (state.qualification.pain || 'n/a') + ", urgency=" + (state.qualification.urgency || 'n/a'));
     botSay("Connecting you with the Interstellar I.S. team now…", function() {
-      setTimeout(function() { openLiveChatModal(CONFIG.teamChatUrl + '?ctx=' + ctx); }, 600);
+      setTimeout(function() {
+        openLiveChatModal(CONFIG.teamChatUrl + '?ctx=' + ctx);
+      }, 600);
     });
   }
+
   function routeToFounder() {
     addMessage('Talk to the founder', 'user');
     clearOptions();
     botSay("Sounds like your situation needs the principal. Routing you to Marc Shamp directly…", function() {
-      setTimeout(function() { openLiveChatModal(CONFIG.founderChatUrl); }, 600);
+      setTimeout(function() {
+        openLiveChatModal(CONFIG.founderChatUrl);
+      }, 600);
     });
   }
+
   function askEmail() {
     addMessage('Just send me info', 'user');
     state.step = 'collecting_email';
     clearOptions();
     botSay("Drop your email and I'll have someone send a quick recap with a few options for you to consider.");
   }
+
   function handleEmailCapture(email) {
     state.qualification.email = email;
     state.step = 'email_captured';
@@ -391,6 +389,7 @@ $atlasContent = @'
       ]);
     });
   }
+
   function answerFAQ(key) {
     const answer = FAQ[key];
     if (answer) {
@@ -405,6 +404,7 @@ $atlasContent = @'
       });
     }
   }
+
   function offerMoreQuestions() {
     addMessage('Other questions', 'user');
     clearOptions();
@@ -417,12 +417,14 @@ $atlasContent = @'
       ]);
     });
   }
+
   function closeFlow() {
     addMessage('No, thanks', 'user');
     clearOptions();
     botSay("Sounds good. We're here whenever you're ready — call (720) 735-8800 or schedule any time. Have a good one.");
     state.step = 'closed';
   }
+
   function handleFreeText(text) {
     addMessage(text, 'user');
     if (state.step === 'asking_industry') {
@@ -456,6 +458,7 @@ $atlasContent = @'
       ]);
     });
   }
+
   function openPanel() {
     panel.classList.add('atlas-open');
     panel.setAttribute('aria-hidden', 'false');
@@ -463,16 +466,22 @@ $atlasContent = @'
     if (state.step === 'opening') setTimeout(start, 300);
     setTimeout(function() { input.focus(); }, 400);
   }
+
   function closePanel() {
     panel.classList.remove('atlas-open');
     panel.setAttribute('aria-hidden', 'true');
     launcher.classList.remove('atlas-hidden');
   }
+
   launcher.addEventListener('click', openPanel);
   launcher.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPanel(); }
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openPanel();
+    }
   });
   closeBtn.addEventListener('click', closePanel);
+
   function send() {
     const text = input.value.trim();
     if (!text) return;
@@ -481,7 +490,11 @@ $atlasContent = @'
   }
   sendBtn.addEventListener('click', send);
   input.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') { e.preventDefault(); send(); }
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      send();
+    }
   });
+
   ensureLiveChatModal();
 })();
